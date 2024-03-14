@@ -13,45 +13,36 @@ public class Task1 extends TestBase {
     @Parameters({"searchWord1"})
     public void testSearch1(String searchWord1) {
         driver.get("https://www.google.com");
-        WebElement searchBox = driver.findElement(By.name("q"));
-        // Combine the search words
-        String Search = searchWord1;
-        searchBox.sendKeys(Search);
+
+        // Use By locators to identify elements
+        By searchBoxLocator = By.name("q");
+
+        // Now find the element using the locator when needed
+        WebElement searchBox = driver.findElement(searchBoxLocator);
+        searchBox.sendKeys(searchWord1);
         searchBox.submit();
 
-        String bodyText = driver.findElement(By.tagName("body")).getText();
+        By bodyLocator = By.tagName("body");
+        String bodyText = driver.findElement(bodyLocator).getText();
         Assert.assertTrue(bodyText.contains(searchWord1));
-
     }
 
     @Test
     @Parameters({"searchWord2"})
     public void testSearch2(String searchWord2) {
         driver.get("https://www.google.com");
-        WebElement searchBox = driver.findElement(By.name("q"));
 
-        String Search = searchWord2;
-        searchBox.sendKeys(Search);
+        // Use By locators to identify elements
+        By searchBoxLocator = By.name("q");
+
+        // Now find the element using the locator when needed
+        WebElement searchBox = driver.findElement(searchBoxLocator);
+        searchBox.sendKeys(searchWord2);
         searchBox.submit();
-        String bodyText = driver.findElement(By.tagName("body")).getText();
+
+        By bodyLocator = By.tagName("body");
+        String bodyText = driver.findElement(bodyLocator).getText();
         Assert.assertTrue(bodyText.contains(searchWord2));
-    }
-    }
-/* ***********************************************
+    }}
 
-<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<suite name="Suite1">
-    <test name="Test with Parameters">
-        <parameter name="searchWord1" value="Java" />
-        <parameter name="searchWord2" value="Selenium" />
-        <classes>
-            <class name="SDA.Test.HW.Day16.Task1"/>
-        </classes>
-    </test>
-</suite>
-
-
-
-
- *********************************************** */
 

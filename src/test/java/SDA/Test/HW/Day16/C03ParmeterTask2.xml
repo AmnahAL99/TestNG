@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Suite">
+    <test name="Positive Test">
+        <parameter name="positiveUsername" value="student">
+        </parameter>
+        <parameter name="positivePassword" value="Password123">
+        </parameter>
+        <classes>
+            <class name="SDA.Test.HW.Day16.Task2">
+            </class>
+        </classes>
+    </test>
+</suite>

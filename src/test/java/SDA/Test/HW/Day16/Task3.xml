@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true"
+          name="C:/Users/mr-sh/IdeaProjects/SDA2024_TestNG/src/test/java/SDA/Test/HW/Day16/Task3.java">
+        <classes>
+            <class name="SDA.Test.HW.Day16.Task3">
+                <methods>
+                    <include name="negativeScenario"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
