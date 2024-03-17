@@ -1,4 +1,4 @@
-package PersonalTraining;
+package SDA.Test.HW.Day17;
 
 import SDA.Utilities.TestBase;
 import org.openqa.selenium.By;
@@ -8,16 +8,21 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+/* ********************************************************************
+Open the site: http://opencart.abstracta.us/index.php?route=account/login
+Login with that credentials
+Email: clarusway@gmail.com
+Password: 123456789
+Using the Search function do it with Data Provider for Mac, iPad and Samsung.
+******************************************************************** */
 
-public class OpenCartSearchTest extends TestBase {
+public class Task1 extends TestBase {
 
     // Define element locators
     private By emailInput = By.id("input-email");
     private By passwordInput = By.id("input-password");
     private By loginButton = By.cssSelector("input[value='Login']");
     private By searchBox = By.name("search");
-
-
 
     public void login(String email, String password) {
         // Input Email
@@ -37,20 +42,6 @@ public class OpenCartSearchTest extends TestBase {
         };
     }
 
-//    @Test(dataProvider = "searchTermsProvider")
-//    public void testSearch(String searchTerm) {
-//        driver.get("http://opencart.abstracta.us/index.php?route=account/login");
-//        login("clarusway@gmail.com", "123456789");
-//        WebElement searchField = driver.findElement(searchBox);
-//        searchField.clear();
-//        searchField.sendKeys(searchTerm);
-//        searchField.submit();
-//
-
-//        // Assert that search results page is displayed
-//        //Assert.assertTrue(driver.getCurrentUrl().contains("search"), "Search results page not displayed.");
-//    }
-
     @Test(dataProvider = "searchTermsProvider")
     public void testSearch(String searchTerm) {
         driver.get("http://opencart.abstracta.us/index.php?route=account/login");
@@ -66,9 +57,10 @@ public class OpenCartSearchTest extends TestBase {
             // If the search button is not found, send ENTER key as a fallback
             searchField.sendKeys(Keys.ENTER);
         }
-        // Add your assertions here
+
         Assert.assertTrue(driver.getCurrentUrl().contains("search"), "Search results page not displayed.");
     }
 
 }
+
 

@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Test Suite">
-    <test name="Test ">
-
+    <test verbose="2" preserve-order="true"
+          name="Test">
         <classes>
-            <class
-                    name="MyPractice.Task3.LoginTest">
+            <class name="MyPractice.Task1.FormTest">
 
             </class>
         </classes>
