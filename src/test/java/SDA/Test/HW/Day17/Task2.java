@@ -25,6 +25,43 @@ Doing Cross Browser Testing.
     private By archive = By.xpath("//a[@ng-click='todoList.archive()']");
     private By addTodo = By.id("todotext");
     @Test
+    public void testTodoApp1() {
+        SoftAssert sa = new SoftAssert();
+        driver.get("http://crossbrowsertesting.github.io/todo-app.html");
+
+        // Initial list size check
+        int initialTodos = driver.findElements(Count).size();
+        System.out.println("Initial Todos: " + initialTodos); // For debug purposes
+
+        // Checking boxes for todo-4 and todo-5
+        driver.findElement(todo4).click();
+        driver.findElement(todo5).click();
+
+        // Size after checking specific todos
+        int checkedTodos = driver.findElements(Count).size();
+        System.out.println("Todos after checking items: " + checkedTodos); // For debug purposes
+        // Assert that the size matches expected after checking boxes
+        // Note: Assuming checking does not hide them immediately
+        sa.assertEquals(checkedTodos, initialTodos, "The size should remain the same after checking items since they are not hidden or removed.");
+
+        // Adding a new todo item
+        driver.findElement(addTodo).sendKeys("Task 2 by Cross Browser chrome and firefox ", Keys.ENTER);
+        // Archive completed todos
+        driver.findElement(archive).click();
+
+        // Size after archiving and adding a new todo
+        int finalTodos = driver.findElements(Count).size();
+        System.out.println("Final Todos after archiving and adding a new one: " + finalTodos); // For debug purposes
+        // Asserting the list's size after archiving and adding a new todo
+        // Adjust the expected number according to what's logically expected after these operations
+        sa.assertEquals(finalTodos, initialTodos - 2 + 1, "Expected one less item in the list after archiving two and adding one new todo.");
+
+        sa.assertAll();
+    }
+}
+
+/*
+    @Test
     public void testTodoApp() {
 
         driver.get("http://crossbrowsertesting.github.io/todo-app.html");
@@ -42,21 +79,5 @@ Doing Cross Browser Testing.
         sa.assertEquals(Todos, 4, "Expected 4 items in the list after archiving and adding a new todo.");
 
         sa.assertAll();
-    }
-}
-
-/*
-    @Test
-    public void testTodoApp() {
-        // Use explicit wait to ensure elements are clickable before clicking
-        wait.until(ExpectedConditions.elementToBeClickable(By.name("todo-4"))).click();
-        wait.until(ExpectedConditions.elementToBeClickable(By.name("todo-5"))).click();
-        // Check the items have been clicked by waiting for their 'completed' status
-        List<WebElement> checkedItems = wait.until(ExpectedConditions.numberOfElementsToBe(By.cssSelector("li[class='ng-scope completed']"), 2));
-        Assert.assertEquals(checkedItems.size(), 2, "Not all items were checked");
-        // Archive and verify the list size changes
-        driver.findElement(By.id("archive")).click();
-        List<WebElement> todosAfterArchive = wait.until(ExpectedConditions.numberOfElementsToBeMoreThan(By.cssSelector("li.ng-scope"), 3));
-        Assert.assertTrue(todosAfterArchive.size() == 4, "The list size after archiving is incorrect");
     }
  */

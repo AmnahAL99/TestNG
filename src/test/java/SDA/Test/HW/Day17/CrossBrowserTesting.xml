@@ -6,7 +6,7 @@
         <classes>
             <class name="SDA.Test.HW.Day17.Task2">
                 <methods>
-                    <include name="testTodoApp"></include>
+                    <include name="testTodoApp1"></include>
                 </methods>
             </class>
         </classes>
@@ -16,7 +16,7 @@
         <classes>
             <class name="SDA.Test.HW.Day17.Task2">
                 <methods>
-                    <include name="testTodoApp"></include>
+                    <include name="testTodoApp1"></include>
                 </methods>
             </class>
         </classes>
