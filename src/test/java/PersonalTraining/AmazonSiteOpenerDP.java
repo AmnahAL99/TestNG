@@ -36,3 +36,16 @@ public class AmazonSiteOpenerDP extends TestBase {
     }
  
 }
+/*
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="MyTestSuite" parallel="methods" thread-count="5">
+    <test name="MyTest">
+        <classes>
+            <class name="com.example.tests.MyTestClass1"/>
+            <class name="com.example.tests.MyTestClass2"/>
+        </classes>
+    </test>
+</suite>
+
+ */
