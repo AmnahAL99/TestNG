@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="MyTestSuite" parallel="methods" thread-count="3">
+    <test name="MyTest">
+        <classes>
+            <class name="SDA.Test.Day15.C04DependsOnMethods"/>
+            <class name="SDA.Test.HW.Day15.Task3"/>
+            <class name="SDA.Test.HW.Day15.Task2"/>
+
+        </classes>
+    </test>
+</suite>

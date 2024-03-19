@@ -16,7 +16,7 @@ public class ListenerTest implements ITestListener
     @Override
     public void onStart(ITestContext Result)
     {
-
+        System.out.println("Test has started running :" + Result.getStartDate());
     }
 
     @Override
@@ -51,6 +51,12 @@ public class ListenerTest implements ITestListener
     public void onTestSuccess(ITestResult Result)
     {
         System.out.println("The name of the testcase passed is :"+Result.getName());
+    }  @Override
+    public void onTestFailedWithTimeout(ITestResult Result)
+    {
+        System.out.println("The name of the testcase failed due timeout :"+Result.getName());
     }
+
+
 
 }
