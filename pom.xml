@@ -85,7 +85,7 @@
                 </suiteXmlFiles>
                 -->
                 <includes>
-                    <include>13AllureTest.xml</include>
+                    <include>MyPractice/Task1/MyPracticeTask1.xml</include>
                 </includes>
             </configuration>
         </plugin>

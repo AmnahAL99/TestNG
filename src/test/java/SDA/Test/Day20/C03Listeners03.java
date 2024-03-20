@@ -1,7 +1,8 @@
-package SDA.Test.Day19;
+package SDA.Test.Day20;
 
 
 import SDA.Utilities.TestBase;
+import SDA.Utilities.TestBaseExtendReport;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -12,7 +13,7 @@ import org.testng.asserts.SoftAssert;
 import java.time.Duration;
 
 
-public class C03CAllureTest01 extends TestBase {
+public class C03Listeners03 extends TestBaseExtendReport {
 
         /*
         Test Case2: Negative Username Test

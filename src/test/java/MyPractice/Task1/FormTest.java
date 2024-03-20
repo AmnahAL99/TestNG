@@ -12,7 +12,8 @@ import java.util.List;
 
 @Listeners(TestListener.class)
 public class FormTest {
-    private WebDriver driver;
+   // private WebDriver driver;
+   public static WebDriver driver;
     private BasicFormPage formPage;
 
     @BeforeClass
@@ -20,11 +21,13 @@ public class FormTest {
 
         driver = new ChromeDriver();
         driver.get("https://testpages.eviltester.com/styled/basic-html-form-test.html");
+
         formPage = new BasicFormPage(driver);
     }
 
     @Test
     public void testFormSubmission() {
+
         formPage.setUsername("testuser");
         formPage.setPassword("password");
         formPage.setComments("This is a test comment.");
